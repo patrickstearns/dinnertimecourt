@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="termite bisque">
+  <defs>
+    <linearGradient id="termitebisqu-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8e6"/>
+      <stop offset="100%" stop-color="#e8c878"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="18" fill="url(#termitebisqu-bg)"/>
+  <rect x="8" y="8" width="112" height="112" rx="14" fill="none" stroke="#f0c14b" stroke-width="4"/>
+
+  
+  <ellipse cx="64" cy="88" rx="36" ry="8" fill="#5a4208" opacity="0.2"/>
+  <path d="M28 58 C30 86, 98 86, 100 58 Z" fill="#efe6d4" stroke="#b8a078" stroke-width="2"/>
+  <ellipse cx="64" cy="58" rx="36" ry="12" fill="#e09a4a" stroke="#8a5020" stroke-width="1.5"/>
+  <ellipse cx="64" cy="56" rx="28" ry="8" fill="#c9782a"/>
+  <path d="M48 48 Q52 40 56 48" fill="none" stroke="#fff8e6" stroke-width="2" opacity="0.7"/>
+  <path d="M64 46 Q68 38 72 46" fill="none" stroke="#fff8e6" stroke-width="2" opacity="0.7"/>
+  <path d="M78 50 Q82 42 86 50" fill="none" stroke="#fff8e6" stroke-width="2" opacity="0.6"/>
+</svg>

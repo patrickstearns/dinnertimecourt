@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87bce8"/>
+      <stop offset="100%" stop-color="#2f6b4c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect x="0" y="560" width="1600" height="340" fill="#1f4a36"/><rect x="220" y="300" width="220" height="260" rx="12" fill="#c9a66b" opacity="0.55"/><rect x="520" y="320" width="220" height="240" rx="12" fill="#c9a66b" opacity="0.45"/><rect x="820" y="310" width="220" height="250" rx="12" fill="#c9a66b" opacity="0.5"/>
+  <text x="800" y="820" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#fff8e6" opacity="0.35">Day Market</text>
+</svg>

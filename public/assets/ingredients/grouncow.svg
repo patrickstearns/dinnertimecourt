@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Groun'cow">
+  <defs>
+    <linearGradient id="gc-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8e6"/>
+      <stop offset="100%" stop-color="#8b4a3b"/>
+    </linearGradient>
+    <linearGradient id="gc-meat" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0%" stop-color="#e07a66"/>
+      <stop offset="42%" stop-color="#b84338"/>
+      <stop offset="100%" stop-color="#74281f"/>
+    </linearGradient>
+    <linearGradient id="gc-tray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dedede"/>
+    </linearGradient>
+    <radialGradient id="gc-shine" cx="38%" cy="32%" r="55%">
+      <stop offset="0%" stop-color="#ffd4c8" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#b84338" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="128" height="128" rx="18" fill="url(#gc-bg)"/>
+  <rect x="8" y="8" width="112" height="112" rx="14" fill="none" stroke="#f0c14b" stroke-width="4"/>
+  <rect x="18" y="74" width="92" height="24" rx="5" fill="url(#gc-tray)" stroke="#c8c8c8" stroke-width="2"/>
+  <rect x="20" y="76" width="88" height="5" rx="2.5" fill="#fff" opacity="0.65"/>
+  <path d="M22 74 C24 62, 34 48, 48 44 C56 42, 60 40, 64 40 C68 40, 72 42, 80 44 C94 48, 104 62, 106 74 C98 80, 82 84, 64 85 C46 84, 30 80, 22 74 Z" fill="url(#gc-meat)" stroke="#5a2018" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="42" cy="56" rx="7" ry="5" fill="#8f3a30" opacity="0.55" transform="rotate(-18 42 56)"/>
+  <ellipse cx="58" cy="50" rx="8" ry="6" fill="#6f2a22" opacity="0.45" transform="rotate(12 58 50)"/>
+  <ellipse cx="74" cy="54" rx="6.5" ry="4.5" fill="#8f3a30" opacity="0.5" transform="rotate(-8 74 54)"/>
+  <ellipse cx="52" cy="64" rx="5" ry="3.5" fill="#6f2a22" opacity="0.4" transform="rotate(22 52 64)"/>
+  <ellipse cx="68" cy="62" rx="5.5" ry="4" fill="#7a2e24" opacity="0.45" transform="rotate(-14 68 62)"/>
+  <ellipse cx="46" cy="68" rx="4" ry="3" fill="#6f2a22" opacity="0.35"/>
+  <ellipse cx="78" cy="66" rx="4.5" ry="3" fill="#6f2a22" opacity="0.35"/>
+  <ellipse cx="50" cy="50" rx="20" ry="13" fill="url(#gc-shine)"/>
+  <path d="M20 52 C38 40, 90 40, 108 52" fill="none" stroke="#ffffff" stroke-width="2.2" opacity="0.55" stroke-linecap="round"/>
+  <path d="M24 62 C44 72, 84 72, 104 62" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.35" stroke-linecap="round"/>
+  <rect x="76" y="78" width="24" height="14" rx="2" fill="#6a9a52" stroke="#466832" stroke-width="1.5"/>
+  <circle cx="88" cy="83" r="2.8" fill="#f0c14b"/>
+  <path d="M84.5 87.5h7v2.8h-7z" fill="#fff8e6" opacity="0.85"/>
+</svg>

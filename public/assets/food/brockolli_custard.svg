@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="brockolli custard">
+  <defs>
+    <linearGradient id="brockollicus-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8e6"/>
+      <stop offset="100%" stop-color="#e8c878"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="18" fill="url(#brockollicus-bg)"/>
+  <rect x="8" y="8" width="112" height="112" rx="14" fill="none" stroke="#f0c14b" stroke-width="4"/>
+
+  
+  <ellipse cx="64" cy="88" rx="36" ry="8" fill="#5a4208" opacity="0.2"/>
+  <path d="M28 58 C30 86, 98 86, 100 58 Z" fill="#efe6d4" stroke="#b8a078" stroke-width="2"/>
+  <ellipse cx="64" cy="58" rx="36" ry="12" fill="#e8d4a8" stroke="#8a5020" stroke-width="1.5"/>
+  <ellipse cx="54" cy="56" rx="10" ry="6" fill="#d4b878"/>
+  <ellipse cx="72" cy="58" rx="9" ry="5" fill="#c9a868"/>
+  <circle cx="64" cy="52" r="4" fill="#6a9a42"/>
+</svg>

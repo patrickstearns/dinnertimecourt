@@ -1,0 +1,28 @@
+{
+  "name": "halfling-night-court",
+  "version": "1.0.0",
+  "description": "Online multiplayer Dinnertime Court — cook by day, argue by night",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "assets": "node scripts/generate-assets.js",
+    "characters": "node scripts/chroma-key-characters.js && node -e \"const {PLAYABLE_CHARACTERS}=require('./shared/characters');require('fs').writeFileSync('public/js/character-roster.json',JSON.stringify(PLAYABLE_CHARACTERS.map(c=>({id:c.id,name:c.name,front:c.front,rear:c.rear}))))\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nanoid": "^6.0.1",
+    "socket.io": "^4.8.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}

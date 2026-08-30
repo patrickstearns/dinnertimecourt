@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Spicy Bird Wrap">
+  <defs>
+    <linearGradient id="SpicyBirdWra-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8e6"/>
+      <stop offset="100%" stop-color="#e8c878"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="18" fill="url(#SpicyBirdWra-bg)"/>
+  <rect x="8" y="8" width="112" height="112" rx="14" fill="none" stroke="#f0c14b" stroke-width="4"/>
+
+  <ellipse cx="64" cy="92" rx="34" ry="7" fill="#5a4208" opacity="0.2"/>
+  <path d="M24 70 C36 40, 92 40, 104 70 C90 92, 38 92, 24 70 Z" fill="#c9e07a" stroke="#6a8a32" stroke-width="2"/>
+  <path d="M34 66 C48 52, 80 52, 94 66" fill="none" stroke="#8fbc4a" stroke-width="3"/>
+  <ellipse cx="56" cy="68" rx="8" ry="5" fill="#c45c26"/>
+  <ellipse cx="74" cy="70" rx="6" ry="4" fill="#e8b86a"/>
+</svg>

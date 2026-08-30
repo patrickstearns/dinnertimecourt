@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Ingredients">
+  <rect width="32" height="32" rx="6" fill="#d5e6da" stroke="#2f6b4c" stroke-width="2"/>
+  <!-- frying pan -->
+  <ellipse cx="13.5" cy="17" rx="8.5" ry="6.5" fill="#5a6168" stroke="#1c1f24" stroke-width="1.4"/>
+  <ellipse cx="13.5" cy="16.2" rx="5.8" ry="4.2" fill="#2a2e34"/>
+  <ellipse cx="11.2" cy="14.6" rx="2.2" ry="1.2" fill="#8a939c" opacity="0.45"/>
+  <rect x="20.5" y="15.2" width="7.5" height="3.4" rx="1.5" fill="#8b5a2b" stroke="#3a2410" stroke-width="1"/>
+  <circle cx="27.2" cy="16.9" r="1.35" fill="#c9a66b" stroke="#3a2410" stroke-width="0.9"/>
+</svg>

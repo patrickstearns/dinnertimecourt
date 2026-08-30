@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Food token">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8c878"/>
+      <stop offset="55%" stop-color="#c9953a"/>
+      <stop offset="100%" stop-color="#8a5a18"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#fff6d0" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#c9953a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="url(#wood)" stroke="#5a4208" stroke-width="3"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#ffe89a" stroke-width="2" opacity="0.7"/>
+  <circle cx="32" cy="32" r="28" fill="url(#shine)"/>
+  <text x="32" y="40" text-anchor="middle" font-size="22">🍽</text>
+</svg>

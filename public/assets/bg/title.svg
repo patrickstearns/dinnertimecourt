@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f4a36"/>
+      <stop offset="100%" stop-color="#143528"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <ellipse cx="400" cy="700" rx="520" ry="120" fill="#0f2a1d" opacity="0.5"/><rect x="620" y="260" width="360" height="420" rx="24" fill="#d5e6da" opacity="0.15"/><path d="M700 680 L800 420 L900 680 Z" fill="#f0c14b" opacity="0.25"/>
+  <text x="800" y="820" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#f0c14b" opacity="0.35">Dinnertime Court</text>
+</svg>

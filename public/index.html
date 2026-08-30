@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dinnertime Court</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Title / Sign-in -->
+    <section id="screen-title" class="screen active">
+      <div class="title-stage">
+        <div class="title-glow" aria-hidden="true"></div>
+        <img
+          class="title-logo"
+          src="/assets/title/dinnertime-court-logo.png"
+          alt="Dinnertime Court"
+        />
+        <form id="signin-form" class="signin-form">
+          <label for="username">Your name</label>
+          <input id="username" name="username" maxlength="20" placeholder="e.g. Bramble Quill" autocomplete="nickname" required />
+          <button type="submit" class="btn primary">Enter the Courthouse</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Main lobby: browse / create -->
+    <section id="screen-lobby" class="screen">
+      <header class="topbar">
+        <img
+          class="topbar-logo"
+          src="/assets/title/dinnertime-court-logo.png"
+          alt="Dinnertime Court"
+        />
+        <p class="whoami">
+          Playing as <strong id="lobby-username"></strong>
+          <button type="button" id="btn-back-title" class="link-change">(change)</button>
+        </p>
+      </header>
+      <div class="lobby-grid lobby-browser">
+        <div class="panel lobby-games-panel">
+          <button type="button" id="btn-new-game" class="lobby-add-btn" aria-label="New game" title="New game">+</button>
+          <div class="lobby-games-head">
+            <h2>Games on This Server</h2>
+          </div>
+          <ul id="server-games" class="server-games" aria-live="polite"></ul>
+          <p id="server-games-empty" class="hint" hidden>No Games Yet</p>
+          <div class="lobby-games-foot">
+            <button type="button" id="btn-refresh-games" class="btn secondary lobby-refresh">Refresh</button>
+          </div>
+        </div>
+      </div>
+      <div id="create-game-dialog" class="counsel-dialog" hidden>
+        <div class="counsel-dialog-card create-game-dialog-card" role="dialog" aria-labelledby="create-game-title" aria-modal="true">
+          <form id="create-form">
+            <h2 id="create-game-title">New Game</h2>
+            <p class="hint">Host a table for 2–6 players (humans and AI).</p>
+            <label for="create-gp">Partnership Prestige goal</label>
+            <input id="create-gp" type="number" min="5" max="99" value="10" />
+            <p id="create-error" class="error" hidden></p>
+            <div class="btn-row">
+              <button type="submit" class="btn primary">Create room</button>
+              <button type="button" id="btn-cancel-create" class="btn secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p id="lobby-error" class="error" hidden></p>
+    </section>
+
+    <!-- Game lobby (waiting room) -->
+    <section id="screen-room" class="screen">
+      <header class="topbar room-topbar">
+        <img
+          class="topbar-logo"
+          src="/assets/title/dinnertime-court-logo.png"
+          alt="Dinnertime Court"
+        />
+        <div class="room-heading">
+          <div class="room-code-badge">
+            <span id="room-title">Waiting room</span>
+          </div>
+          <button type="button" id="btn-leave-room" class="btn secondary">Leave room</button>
+        </div>
+      </header>
+      <div class="room-layout room-layout-solo">
+        <div class="panel room-main">
+          <h2>Counsel at the table</h2>
+          <div id="room-seats" class="room-seats" role="list"></div>
+          <div id="host-controls" class="host-controls" hidden>
+            <div class="prestige-row">
+              <label for="room-gp">Prestige to Win:</label>
+              <input id="room-gp" type="number" min="5" max="99" />
+            </div>
+            <div class="btn-row start-row">
+              <button type="button" id="btn-start" class="btn primary">Begin proceedings</button>
+            </div>
+          </div>
+          <p id="guest-wait" class="hint" hidden>Waiting for the host to start… <span id="guest-gp"></span></p>
+        </div>
+      </div>
+      <p id="room-error" class="error" hidden></p>
+    </section>
+
+    <div id="counsel-dialog" class="counsel-dialog" hidden>
+      <div class="counsel-dialog-card" role="dialog" aria-modal="true" aria-labelledby="counsel-dialog-title">
+        <div class="counsel-dialog-head">
+          <h2 id="counsel-dialog-title">Choose Your Counsel</h2>
+          <button type="button" id="counsel-dialog-close" class="btn ghost">Close</button>
+        </div>
+        <div id="character-picker" class="character-picker" role="listbox" aria-label="Character portraits"></div>
+      </div>
+    </div>
+
+    <!-- Game -->
+    <section id="screen-game" class="screen">
+      <header class="game-topbar">
+        <div class="phase-marker" id="phase-marker" data-mealtime="breakfast">
+          <div class="mealtime-coin" id="mealtime-coin" aria-hidden="true">
+            <img id="mealtime-img" class="mealtime-face" src="/assets/mealtimes/breakfast.png" alt="" />
+          </div>
+          <span id="phase-label">Breakfasttime</span>
+          <span class="round-pill">Round <span id="round-num">1</span></span>
+        </div>
+        <div class="goal-pill"><img src="/assets/prestige-icon.svg" alt="" class="goal-coin" /><span id="goal-gp">10</span> Prestige to Make Partner</div>
+        <div class="instruction-pill" id="instruction-pill" hidden></div>
+      </header>
+
+      <div class="game-board">
+        <aside class="scores-column">
+          <div class="scores-rail" id="scores-rail"></div>
+        </aside>
+
+        <main class="table-area">
+          <div id="market-zone" class="zone market-zone">
+            <div class="zone-head"><h2>Market</h2></div>
+            <div class="zone-body">
+              <div class="market-layout">
+                <div class="market-decks">
+                  <div class="deck-pile-wrap">
+                    <div id="recipe-deck-pile" class="deck-pile landscape"></div>
+                  </div>
+                  <div class="deck-pile-wrap">
+                    <div id="ingredient-deck-pile" class="deck-pile landscape"></div>
+                  </div>
+                  <div class="deck-pile-wrap">
+                    <div id="argument-deck-pile" class="deck-pile landscape"></div>
+                  </div>
+                </div>
+                <div class="market-section">
+                  <div id="ingredient-market" class="ingredient-market-grid"></div>
+                </div>
+                <div class="market-vendor" aria-hidden="true">
+                  <img id="market-girl-art" class="market-girl-art" src="/assets/characters/npc_market_girl-front.png" alt="" />
+                  <div id="market-girl-speech" class="market-girl-speech" hidden>Can I help you?</div>
+                </div>
+              </div>
+              <div id="market-actions" class="action-bar"></div>
+            </div>
+          </div>
+
+          <div id="cook-zone" class="zone cook-zone" hidden>
+            <div class="zone-head"><h2>Kitchen</h2></div>
+            <div class="zone-body">
+              <div id="cook-panel"></div>
+            </div>
+          </div>
+
+          <div id="court-zone" class="zone court-zone" hidden>
+            <div class="zone-head"><h2>Dinnertime Court</h2></div>
+            <div class="zone-body">
+              <div id="court-stage" class="court-stage" aria-hidden="true">
+                <div class="court-bench">
+                  <img class="court-npc court-bailiff" src="/assets/characters/npc_bailiff-front.png" alt="" />
+                  <div class="court-judge-stack" aria-hidden="true">
+                    <img class="court-npc court-judge-char" src="/assets/characters/npc_judge-character.png" alt="" />
+                    <img class="court-npc court-judge-lectern" src="/assets/characters/npc_judge-lectern.png" alt="" />
+                  </div>
+                </div>
+                <div class="court-floor">
+                  <img id="court-defense-art" class="court-npc court-defense" src="" alt="" hidden />
+                  <img class="court-npc court-prosecutor" src="/assets/characters/npc_prosecutor-rear.png" alt="" />
+                </div>
+                <div id="court-speech-layer" class="court-speech-layer" aria-live="polite"></div>
+              </div>
+              <div id="case-banner" class="case-banner"></div>
+              <div id="court-scores" class="court-scores"></div>
+              <div id="court-actions" class="action-bar"></div>
+              <div id="court-play-reveal" class="court-play-reveal" aria-live="polite"></div>
+              <div id="fate-dice-table" class="fate-dice-table idle">
+                <div class="die die-blue" id="die-defense" data-face="1" aria-hidden="true">
+                  <div class="die-cube">
+                    <div class="die-face f1"><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+                    <div class="die-face f2"><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+                    <div class="die-face f3"><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+                    <div class="die-face f4"><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+                    <div class="die-face f5"><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+                    <div class="die-face f6"><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="gameover-zone" class="zone gameover-zone" hidden>
+            <div class="zone-head"><h2>Final Verdict</h2></div>
+            <div class="zone-body">
+              <h2 id="winner-title">Partnership!</h2>
+              <p id="winner-sub"></p>
+              <button type="button" id="btn-play-again" class="btn primary">Back to lobby</button>
+            </div>
+          </div>
+
+          <footer class="log-dock court-report zone">
+            <div class="zone-head"><h2>Court Reporter</h2></div>
+            <div class="court-report-body zone-body">
+              <img class="court-reporter-art" src="/assets/court-reporter-gnome.png" alt="" />
+              <ul id="game-log"></ul>
+            </div>
+          </footer>
+        </main>
+
+        <aside class="hand-rail">
+          <div class="zone">
+            <div class="zone-head"><h2>Your Hand</h2></div>
+            <div class="zone-body">
+              <div id="hand-cards" class="hand-stack"></div>
+            </div>
+          </div>
+          <div class="zone">
+            <div class="zone-head"><h2>Recipes</h2></div>
+            <div class="zone-body">
+              <div id="recipe-cards" class="card-col"></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div id="turn-timer" class="turn-timer" hidden aria-live="polite" aria-label="Turn timer">
+        <svg class="turn-timer-svg" viewBox="0 0 36 36" aria-hidden="true">
+          <circle class="turn-timer-track" cx="18" cy="18" r="15.5" fill="none" />
+          <circle class="turn-timer-arc" cx="18" cy="18" r="15.5" fill="none" />
+        </svg>
+        <span id="turn-timer-label" class="turn-timer-label">2:00</span>
+      </div>
+    </section>
+  </div>
+
+  <div id="afk-dialog" class="counsel-dialog" hidden>
+    <div class="counsel-dialog-card afk-dialog-card" role="dialog" aria-modal="true" aria-labelledby="afk-dialog-title">
+      <h2 id="afk-dialog-title">Player replaced</h2>
+      <p id="afk-dialog-text" class="hint"></p>
+      <div class="btn-row">
+        <button type="button" id="afk-dialog-ok" class="btn primary">OK</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast" class="toast" hidden></div>
+  <div id="announcement-overlay" class="announcement-overlay" hidden>
+    <div class="announcement-card">
+      <p id="announcement-text"></p>
+    </div>
+  </div>
+  <div id="card-fly-layer" aria-hidden="true"></div>
+  <button type="button" id="btn-mute" class="mute-btn" data-audio-mode="full" aria-pressed="false" aria-label="Full sound. Click to mute background music only." title="Full sound — click for SFX only">
+    <span class="mute-icon mute-icon-on" aria-hidden="true"></span>
+    <span class="mute-icon mute-icon-bgm-off" aria-hidden="true"></span>
+    <span class="mute-icon mute-icon-off" aria-hidden="true"></span>
+    <span class="mute-label">Sound</span>
+  </button>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/audio.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

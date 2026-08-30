@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="gravy boat">
+  <defs>
+    <linearGradient id="gravyboat-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8e6"/>
+      <stop offset="100%" stop-color="#e8c878"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="18" fill="url(#gravyboat-bg)"/>
+  <rect x="8" y="8" width="112" height="112" rx="14" fill="none" stroke="#f0c14b" stroke-width="4"/>
+
+  <path d="M24 78 C40 96, 88 96, 104 78 L96 58 C80 68, 48 68, 32 58 Z" fill="#8a5a18" stroke="#5a3a10" stroke-width="2"/>
+  <ellipse cx="64" cy="62" rx="30" ry="12" fill="#f0c14b" stroke="#9a7510" stroke-width="1.5"/>
+  <ellipse cx="54" cy="60" rx="8" ry="5" fill="#c45c26"/>
+  <ellipse cx="74" cy="62" rx="7" ry="4" fill="#8f3a30"/>
+</svg>
