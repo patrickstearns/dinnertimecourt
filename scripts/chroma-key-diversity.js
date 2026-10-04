@@ -13,12 +13,12 @@ const SRC_DIR = path.join(
 const OUT_DIR = path.join(__dirname, '..', 'public', 'assets', 'characters');
 
 const IDS = [
-  'hamfast_hamhock',
-  'silas_stipulate',
-  'barnaby_bisque',
-  'mira_quill',
-  'vera_verdict',
-  'clover_cross_exam',
+  'danlio_flourclout',
+  'pemmo_appleblossom',
+  'yena_spicecloud',
+  'anree_goodbroth',
+  'leedia_feastly',
+  'sylvana_amberhearth',
 ];
 
 async function keyFile(inputPath, outputPath) {

@@ -9,46 +9,46 @@ function slugify(name) {
 
 const PLAYABLE_LOOKS = {
   // Male — short stout halflings in human-style clothes & shoes (no gnome hats, no bare hairy feet)
-  'Brambly Briefs':
+  'Haruum Grandwillow':
     'young scholarly male halfling, vivid ginger red curly hair, ink-stained green waistcoat, brown trousers, leather shoes, satchel of briefs, round spectacles',
-  'Tolman Crumbs':
+  'Jamir Shadowhands':
     'plump older male halfling, crumbs on vest, flour-dusted brown coat, cookie in pocket, polished brown shoes, no hat',
-  'Corwin Crockpot':
+  'Finedell Bitteryeast':
     'round jolly male halfling cook-lawyer, bright blond curly hair, stew-stained coat over apron, holds small copper pot, sturdy boots, no hat',
-  'Hamfast Hamhock':
+  'Danlio Flourclout':
     'burly Black male halfling, dark brown skin, thick mustache, smoked-ham pink tunic, butcher-apron under counsel coat, work boots',
-  'Silas Stipulate':
+  'Pemmo Appleblossom':
     'precise East Asian male halfling, light warm skin, black hair, pince-nez, slate-grey suit with waistcoat, pointing at tiny contract, black dress shoes',
-  'Barnaby Bisque':
+  'Yena Spicecloud':
     'cozy South Asian male halfling, medium brown skin, black hair, creamy bisque-colored coat, soup spoon lapel pin, soft brown shoes, no hat',
   // Female
-  'Pippa Objection':
+  "Porti'a Cobblergobbler":
     'spirited young female halfling, blonde bob, berry-red jacket, raised finger mid-objection, skirts or tailored trousers with neat shoes',
-  'Mira Quill':
+  'Anree Goodbroth':
     'elegant Black female halfling, dark brown skin, silver-streaked black hair in bun, ink-blue robes, oversized quill, formal shoes',
-  'Hazel Snacks':
+  'Galenda Glennflow':
     'cheerful female halfling, hazel braids, snack pouch belt, patchwork apron over counsel robes, brown boots',
-  'Rosie Rollingpin':
+  'Liahra Honeydrip':
     'baker female halfling, flour dusting, rolling pin holster, pink-checked sleeves, sturdy baker shoes',
-  'Vera Verdict':
+  'Leedia Feastly':
     'decisive East Asian female halfling, light warm skin, black hair, black-and-gold counsel robe, scales pin, confident chin, black formal shoes',
-  'Clover Cross-exam':
+  'Sylvana Amberhearth':
     'sharp Latina female halfling, warm olive-brown skin, dark wavy hair, clover pin, emerald jacket, piercing inquisitive stare, polished shoes',
 };
 
 const PLAYABLE_GENDER = {
-  'Brambly Briefs': 'male',
-  'Tolman Crumbs': 'male',
-  'Corwin Crockpot': 'male',
-  'Hamfast Hamhock': 'male',
-  'Silas Stipulate': 'male',
-  'Barnaby Bisque': 'male',
-  'Pippa Objection': 'female',
-  'Mira Quill': 'female',
-  'Hazel Snacks': 'female',
-  'Rosie Rollingpin': 'female',
-  'Vera Verdict': 'female',
-  'Clover Cross-exam': 'female',
+  'Haruum Grandwillow': 'male',
+  'Jamir Shadowhands': 'male',
+  'Finedell Bitteryeast': 'male',
+  'Danlio Flourclout': 'male',
+  'Pemmo Appleblossom': 'male',
+  'Yena Spicecloud': 'male',
+  "Porti'a Cobblergobbler": 'female',
+  'Anree Goodbroth': 'female',
+  'Galenda Glennflow': 'female',
+  'Liahra Honeydrip': 'female',
+  'Leedia Feastly': 'female',
+  'Sylvana Amberhearth': 'female',
 };
 
 const PLAYABLE_CHARACTERS = Object.entries(PLAYABLE_LOOKS).map(([name, look]) => {
